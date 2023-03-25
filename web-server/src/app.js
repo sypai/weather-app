@@ -5,6 +5,8 @@ const hbs = require('hbs');
 const geocode = require('../../web-client/utils/geocode')
 const weather = require('../../web-client/utils/weather')
 
+const port = process.env.PORT || 3000
+
 // Path to Static files
 const public_dir_path = path.join(__dirname, '../public')
 const views_path = path.join(__dirname, '../templates/views')
@@ -100,6 +102,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('SERVER RUNNING ON PORT 3000')
 })
